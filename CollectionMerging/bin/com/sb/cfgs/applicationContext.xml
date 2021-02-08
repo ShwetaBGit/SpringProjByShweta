@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-merge="true" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+
+	<bean id="ec" class="com.sb.beans.EnggCource">
+
+		<property name="subjects">
+			<list >
+				<value>c</value>
+				<value>maths</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean id="it" class="com.sb.beans.EnggCource" parent="ec">
+	   <property name="subjects">
+	    <list merge="default">
+	      <value>digital</value>
+	      <value>chemistry</value>
+	      <value>physics</value>
+	    </list>
+	   
+	   </property>
+	
+	</bean>
+	
+	<bean id="com" class="com.sb.beans.EnggCource" parent="ec">
+	   <property name="subjects">
+	    <list  merge="false">
+	      <value>Com1</value>
+	      <value>com2</value>
+	      <value>com3</value>
+	      <value>c</value>
+	      <value>maths</value>
+	    </list>
+	   
+	   </property>
+	
+	</bean>
+
+
+
+</beans>

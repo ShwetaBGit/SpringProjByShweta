@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<bean id="cal1" class="java.util.Calendar"
+		factory-method="getInstance">
+		<property name="firstDayOfWeek" value="0"/>
+		<qualifier value="cal1" />
+	</bean>
+
+
+	<!--<bean id="cal2" class="java.util.Calendar" factory-method="getInstance"> 
+		<property name="firstDayOfWeek" value="1"></property> </bean> -->
+
+	<!--<bean id="wmsg" class="com.sb.beans.WishMessageGenerator" /> -->
+	<context:component-scan
+		base-package="com.sb.beans" />
+
+</beans>

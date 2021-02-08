@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="dt" class="java.util.Date" />
+
+	<bean id="ci" class="com.sb.beans.Cource">
+		<property name="domain" value="java" />
+
+		<property name="institution" value="NareshIt" />
+
+		<property name="cources">
+			<list>
+				<value>Corejava</value>
+				<value>Advjava</value>
+				<value>Spring</value>
+				<value>Hibernate</value>
+				<value>RestServices</value>
+				<value>DesignPatterns</value>
+				<value>RealtimeProject</value>
+				<value>Hadoop</value>
+
+
+			</list>
+		</property>
+
+		<property name="faculties">
+			<array>
+				<value>HK</value>
+				<value>Venktesh</value>
+				<value>Nataraj</value>
+				<value>Sai</value>
+				<value>Gupta</value>
+				<value>RamChander</value>
+				<value>Ashok</value>
+
+			</array>
+		</property>
+
+
+		<property name="prices">
+			<map>
+				<entry key="corejava" value="10000" />
+				<entry key="advjava" value="2000" />
+				<entry key="spring" value="1500" />
+				<entry key="Hibernate" value="1200" />
+				<entry key="DesignPatterns" value="750" />
+				<entry key="RestServices" value="1000" />
+				<entry key="Hadoop" value="3000" />
+				<entry key="RealtimeProject" value="2500" />
+
+			</map>
+		</property>
+
+		<property name="duration">
+			<map>
+				<entry key="Corejava" value="3" />
+				<entry key="Advjava" value="3" />
+				<entry key="Spring" value="4" />
+				<entry key="Hibernate" value="3" />
+				<entry key="DesignPatterns" value="1" />
+				<entry key="RestServices" value="1" />
+				<entry key="Hadoop" value="2" />
+				<entry key="RealtimeProject" value="2" />
+
+
+			</map>
+		</property>
+		<property name="discount" value="5" />
+	</bean>
+
+	<bean id="st" class="com.sb.beans.Student">
+		<property name="regNo"
+			value="#{T(java.lang.Math).random()*100}" />
+		
+		<property name="name" value="shweta" />
+		
+		<property name="availedCource">
+			<list>
+				<value>#{ci.cources[0]}</value>
+				<value>#{ci.cources[1]}</value>
+				<value>#{ci.cources[2]}</value>
+				<value>#{ci.cources[3]}</value>
+			</list>
+		</property>
+
+		<property name="availedFaculties">
+			<array>
+				<value>#{ci.faculties[0]}</value>
+				<value>#{ci.faculties[2]}</value>
+			</array>
+		</property>
+
+
+		<property name="courceTotalFee"
+			value="#{ci.prices['Corejava']+ci.prices['Advjava']+ci.prices['Spring']+ci.prices['Hibernate']}" />
+
+		<property name="courceDurationTotal"
+			value="#{ci.duration['Corejava']+ci.duration['Advjava']+ci.duration['Spring']+ci.duration['Hibernate']}" />
+
+		<property name="finalFee"
+			value="#{(ci.prices['Corejava']+ci.prices['Advjava']+ci.prices['Spring']+ci.prices['Hibernate'])-((ci.prices['Corejava']+ci.prices['Advjava']+ci.prices['Spring']+ci.prices['Hibernate'])*ci.discount/100.0f)}" />
+
+
+		<property name="date" value="#{dt}"></property>
+	</bean>
+
+
+</beans>

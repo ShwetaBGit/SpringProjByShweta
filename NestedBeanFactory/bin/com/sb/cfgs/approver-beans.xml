@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+
+
+	<bean id="ld" class="com.sb.beans.LoanDetail">
+
+		<property name="loanId" value="102" />
+		<property name="loanType" value="two-wheeler" />
+		<property name="customer" value="Rani" />
+	</bean>
+
+
+	<bean id="ba" class="com.sb.beans.BankApprover">
+
+		<property name="details" ref="ld" />
+	</bean>
+
+
+</beans>

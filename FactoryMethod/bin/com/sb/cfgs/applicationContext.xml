@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+
+
+	<!-- using instance factory method -->
+
+	<bean id="s1" class="java.lang.String">
+		<constructor-arg value="hello " />
+	</bean>
+
+
+	<bean id="s2" factory-bean="s1" factory-method="concat">
+		<constructor-arg value=" how r u?" />
+	</bean>
+
+	<bean id="s3" factory-bean="s2" factory-method="substring">
+		<constructor-arg value="0" />
+		<constructor-arg value="5" />
+	</bean>
+
+	<bean id="s4" class="java.lang.Class" factory-method="forName">
+		<constructor-arg ref="date" />
+	</bean>
+
+
+
+
+</beans>

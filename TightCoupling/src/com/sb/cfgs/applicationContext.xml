@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dtdc" class="com.sb.compositon.DTDC" />
+	<bean id="dtdc1" class="com.sb.factoryClass.DTDC" />
+	<bean id="dtdc2" class="com.sb.jndiRegistry.DTDC" />
+	<bean id="dtdc3" class="com.sb.approach4.DTDC" />
+	<bean id="dtdc4" class="com.sb.approach5.DTDC" />
+	<bean id="dtFactory" class="com.sb.factoryClass.DTDCFactory" />
+
+	<bean id="flpk" class="com.sb.compositon.Flipcart">
+		<property name="id" value="101" />
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/cr" />
+	</bean>
+
+
+	<bean id="flpk1" class="com.sb.factoryClass.Flipkart">
+		<property name="id" value="102" />
+	</bean>
+
+	<bean id="flpk2" class="com.sb.jndiRegistry.Flipkart">
+		<!-- <property name="id" value="103" /> -->
+	</bean>
+
+	<bean id="flpk3" class="com.sb.approach4.Flipcart">
+
+		<property name="id" value="105" />
+	</bean>
+
+
+	<bean id="flpk4" class="com.sb.approach5.Flipcart">
+
+		<property name="dtdc" ref="dtdc4" />
+		<!-- <property name="id" value="108" /> -->
+	</bean>
+
+</beans>

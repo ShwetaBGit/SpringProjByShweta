@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="adhar" class="com.sb.beans.AdharCard">
+		<property name="adharNo" value="98786525979087" />
+		<property name="name" value="shweta" />
+		<property name="age" value="22" />
+		<property name="curlClazz" value="com.sb.beans.AdharCard"/>
+	    <property name="dob" value="02/19/1995"/>
+         <property name="favouriteLetter" value="s"/>
+         <property name="favouriteLetters" value="SKAB"/>
+         <property name="fileReader" value="classpath:com/sb/cfgs/applicationContext.xml"/>
+         <property name="handicaft" value="false"/>
+         <property name="linkedUri" value="linkedIn.com/profile/uid=345"/>
+         <property name="linkedUrl" value="https://linkedIn.com/profile/uid=2345"/>
+         <property name="locale" value="hi_IN"/>
+         <property name="moles" value="moles on right hand,moles on left hand"/>
+         <property name="phones" value="9769695107,8688590031"/>
+         <property name="photopath" value="E:\User backup\Pictures\Aarti Bday"/>
+         <property name="pattern" value=".s"/>
+	</bean>
+
+</beans>

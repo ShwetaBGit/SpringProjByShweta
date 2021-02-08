@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+
+	<!-- <bean id="st" class="com.sb.beans.Student"> -->
+
+	<!-- <property name="names"> <list> <value>shweta</value> <value>ruksar</value> 
+		</list> </property> <property name="marks"> <array> <value>60</value> <value>59</value> 
+		<value>89</value> </array> </property> -->
+
+
+
+	<!--<bean id="st" class="com.sb.beans.StudentSet"> <property name="phoneNo"> 
+		<set> <value>9769693748</value> <value>8688590031</value> <value>9769693748</value> 
+		</set> </property> </bean> -->
+
+	<!--<bean id="st" class="com.sb.beans.StudentMap"> <property name="facultySubject"> 
+		<map> <entry key="Raja" value="java"/> <entry key="rani" value="html"/> </map> 
+		</property> <property name="phoneNo"> <map> <entry key="9769695107" value="shweta"/> 
+		<entry key="8688590031" value="shweta"/> </map> </property> </bean> -->
+
+
+<!--<bean id="empProf" class="com.sb.beans.EmployeeProfile">
+
+		<property name="empDesgs">
+			<props>
+				<prop key="Anil">clerk</prop>
+				<prop key="Jani">SE</prop>
+			</props>
+		</property>
+	</bean> -->
+	
+	
+	<bean id="user" class="com.sb.beans.UserForNull">
+	      <constructor-arg name="id" value="101"/>
+	      <constructor-arg name="name"><null/></constructor-arg>
+	      <constructor-arg name="date"><null/></constructor-arg>
+	</bean>
+
+
+</beans>
