@@ -22,7 +22,7 @@ public class ClientTest {
 
 		sc = new Scanner(System.in);
 
-		System.out.println("enter roll no");
+		System.out.println("enter roll number");
 		String no = sc.next();
 
 		System.out.println("enter name");
