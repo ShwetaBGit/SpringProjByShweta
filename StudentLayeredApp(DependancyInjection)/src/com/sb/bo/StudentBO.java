@@ -5,15 +5,12 @@ import lombok.Data;
 @Data
 public class StudentBO {
 	
-	//Bo hold data that needed for persistance operation
+	//BO hold data that needed for persistance operation
 	
 	private int sno;
 	private String sname;
 	private int total;
 	private float avg;
 	private String result;
-	
-	
-	
 
 }

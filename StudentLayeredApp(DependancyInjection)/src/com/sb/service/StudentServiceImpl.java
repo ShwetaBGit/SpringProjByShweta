@@ -44,7 +44,7 @@ public class StudentServiceImpl implements StudentService {
 		result = "pass";
 	 }
 		else {
-			result ="fail";
+			result ="fail\n";
 	
 	}//else
 		
@@ -63,9 +63,10 @@ public class StudentServiceImpl implements StudentService {
 	return "result: " +bo.getResult() + " " + bo.getSname() + " registration failed " ;
 	}	
 	else {
-		return "result: " + bo.getResult() + " " +bo.getSname() + " Registration Succedded "; 
+		
+		return "result: " +  bo.getResult() + " " +bo.getSname() + " Registration Succedded "; 
 			
-		//result: pass Sushant Registration Succedded
+		//result: pass name Registration Succedded
 	}
 	}//method
 }//class

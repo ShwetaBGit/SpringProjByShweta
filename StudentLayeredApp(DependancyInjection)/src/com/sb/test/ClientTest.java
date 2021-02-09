@@ -28,13 +28,13 @@ public class ClientTest {
 		System.out.println("enter name");
 		String name = sc.next();
 
-		System.out.println("enter m1");
+		System.out.println("enter  marks1");
 		String m1 = sc.next();
 
-		System.out.println("enter m2");
+		System.out.println("enter marks2");
 		String m2 = sc.next();
 
-		System.out.println("enter m3");
+		System.out.println("enter marks3");
 		String m3 = sc.next();
 
 		vo.setSno(no);
@@ -43,12 +43,15 @@ public class ClientTest {
 		vo.setM2(m2);
 		vo.setM3(m3);
 
+		
+		//using Bean Factory container
 		// BeanFactory factory = new XmlBeanFactory(new
-		// FileSystemResource("src/com/sb/cfgs/applicationContext.xml"));
+		// FileSytemResource("src/com/sb/cfgs/applicationContext.xml"));
 
 		// StudentController studController = factory.getBean("controller",
 		// StudentController.class);
 
+		//using applicationContext
 		ApplicationContext ctx = new FileSystemXmlApplicationContext("src/com/sb/cfgs/applicationContext.xml");
 
 		StudentController controller = ctx.getBean("studController", StudentController.class);
